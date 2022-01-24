@@ -6,18 +6,6 @@ mkdir $base 2>/dev/null
 conf=$base/conf
 touch $conf
 
-# wget wget --no-check-certificate -qO natcfg.sh http://blog.arloor.com/sh/iptablesUtils/natcfg.sh && bash natcfg.sh
-
-    clear
-    echo "#############################################################"
-    echo "# Usage: setup iptables nat rules for domian/ip             #"
-    echo "# Website:  http://www.arloor.com/                          #"
-    echo "# Author: ARLOOR <admin@arloor.com>                         #"
-    echo "# Github: https://github.com/arloor/iptablesUtils           #"
-    echo "#############################################################"
-    echo
-
-
 setupService(){
     cat > /usr/local/bin/dnat.sh <<"AAAA"
 #! /bin/bash
