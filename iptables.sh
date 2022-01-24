@@ -165,7 +165,6 @@ firstAfterBoot=0
 sleep 60
 done
 AAAA
-}
 fi
 
 cat > /lib/systemd/system/dnat.service <<\EOF
