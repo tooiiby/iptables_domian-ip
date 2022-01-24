@@ -237,7 +237,6 @@ testVars(){
        # echo  -e "${red}本地端口和目标端口请输入数字！！${black}";
        return 1;
     }
-
 }
 
 lsDnat(){
