@@ -15,7 +15,7 @@ echo
 setupService(){
     if [[ ! -f /usr/local/bin/dnat.sh ]];then
         cat > /usr/local/bin/dnat.sh <<"AAAA"
-        #! /bin/bash
+#! /bin/bash
 [[ "$EUID" -ne '0' ]] && echo "Error:This script must be run as root!" && exit 1;
 
 
