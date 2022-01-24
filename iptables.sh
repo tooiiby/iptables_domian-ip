@@ -165,10 +165,8 @@ firstAfterBoot=0
 sleep 60
 done
 AAAA
-            echo "脚本创建失败，请通过github提交issue通知作者"
-            exit 1
-        }
-    fi
+}
+fi
 
 cat > /lib/systemd/system/dnat.service <<\EOF
 [Unit]
