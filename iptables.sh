@@ -9,7 +9,7 @@ touch $conf
     clear
     echo "#############################################################"
     echo "# Usage: setup iptables nat rules for domian/ip             #"
-    echo "# Author:	tooiiby                                         #"
+    echo "# Author:	tooiiby              #"
     echo "# Github: https://github.com/tooiiby/iptables_domian-ip     #"
     echo "#############################################################"
     echo
