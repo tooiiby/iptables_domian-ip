@@ -209,13 +209,6 @@ addDnat(){
     }
 
     echo -n "目标域名/IP:" ;read remotehost
-    # # 检查输入的不是IP
-    # if [ "$remotehost" = "" -o "$(echo  $remotehost |grep -E -o '([0-9]{1,3}[\.]){3}[0-9]{1,3}')" != "" ];then
-    #     isip=true
-    #     remote=$remotehost
-    #     echo -e "${red}请输入一个ddns域名${black}"
-    #     return 1
-    # fi
 
     sed -i "s/^$localport.*/$localport>$remotehost:$remoteport/g" $conf
     [ "$(cat $conf|grep "$localport>$remotehost:$remoteport")" = "" ]&&{
@@ -245,14 +238,6 @@ testVars(){
        return 1;
     }
 
-    # # 检查输入的不是IP
-    # if [ "$(echo  $remotehost |grep -E -o '([0-9]{1,3}[\.]){3}[0-9]{1,3}')" != "" ];then
-    #     local isip=true
-    #     local remote=$remotehost
-
-    #     # echo -e "${red}警告：你输入的目标地址是一个ip!${black}"
-    #     return 2;
-    # fi
 }
 
 lsDnat(){
@@ -282,14 +267,6 @@ do
         rmDnat
         #break
         ;;
-    # 增加到IP的转发)
-    #     addSnat
-    #     #break
-    #     ;;
-    # 删除到IP的转发)
-    #     rmSnat
-    #     #break
-    #     ;;
     列出所有转发规则)
         lsDnat
         ;;
