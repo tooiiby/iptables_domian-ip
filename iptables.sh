@@ -200,13 +200,6 @@ addDnat(){
     }
 
     echo -n "目标域名/IP:" ;read remotehost
-    # # 检查输入的不是IP
-    # if [ "$remotehost" = "" -o "$(echo  $remotehost |grep -E -o '([0-9]{1,3}[\.]){3}[0-9]{1,3}')" != "" ];then
-    #     isip=true
-    #     remote=$remotehost
-    #     echo -e "${red}请输入一个ddns域名${black}"
-    #     return 1
-    # fi
 
     sed -i "s/^$localport.*/$localport>$remotehost:$remoteport/g" $conf
     [ "$(cat $conf|grep "$localport>$remotehost:$remoteport")" = "" ]&&{
