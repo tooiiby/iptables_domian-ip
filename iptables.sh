@@ -62,15 +62,6 @@ testVars(){
        echo  -e "${red}本地端口和目标端口请输入数字！！${black}";
        return 1;
     }
-
-    # 检查输入的不是IP
-    #if [ "$(echo  $remotehost |grep -E -o '([0-9]{1,3}[\.]){3}[0-9]{1,3}')" != "" ];then
-     #   local isip=true
-     #   local remote=$remotehost
-#
- #       echo -e "${red}警告：你输入的目标地址是一个ip!${black}"
-  #      return 2;
-   # fi
 }
 
 dnat(){
@@ -187,7 +178,6 @@ service dnat start > /dev/null 2>&1
 
 
 ## 获取本机地址
-# 修改 ipv4 公网获取
 localIP=$(curl -s -4 ip.sb) >/dev/null 2>&1
 echo "本机公网IP：${localIP}"
 if [ "${localIP}" = "" ]; then
@@ -283,14 +273,6 @@ do
         rmDnat
         #break
         ;;
-    # 增加到IP的转发)
-    #     addSnat
-    #     #break
-    #     ;;
-    # 删除到IP的转发)
-    #     rmSnat
-    #     #break
-    #     ;;
     列出所有转发规则)
         lsDnat
         ;;
